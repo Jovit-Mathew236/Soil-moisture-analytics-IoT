@@ -76,6 +76,12 @@ function calculateAverage(array) {
 }
 
 async function requestData() {
+  const user = localStorage.getItem("name");
+
+  if (!user) {
+    window.location.href = "./"; // Redirect to the home page if no user is authenticated
+    return;
+  }
   onSnapshot(query(collection(db, "data")), (snapshot) => {
     snapshot.docChanges().forEach((change) => {
       console.log("Data changed: ", change.doc.data());
@@ -150,3 +156,5 @@ function updateChart(data) {
 }
 
 setInterval(requestData, 5000); // Request data every 5 seconds
+
+window.onload = requestData;
