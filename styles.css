@@ -13,6 +13,13 @@ h2 {
     text-align: center;
 }
 
+.container {
+    min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+}
+
 section {
     display: flex;
     justify-content: space-between;
@@ -23,7 +30,7 @@ section {
 
 .bg {
     flex: 5;
-    background-image: url(./bg.jpg);
+    background-image: url(assets/bg.jpg);
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -62,9 +69,41 @@ section {
 .form button span {
     width: 40px;
     height: 40px;
-    background-image: url(./glogo.png);
+    background-image: url(assets/glogo.png);
     background-size: cover;
     background-position: center;
     display: inline-block;
     border-radius: 50%;
+}
+
+#logoutButton {
+    border: none;
+    margin: auto;
+    width: 120px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f04;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    section {
+        justify-content: center;
+    }
+
+    .bg {
+        position: absolute;
+    }
+
+    .form {
+        position: absolute;
+    }
+
+    .form button {
+        width: 100%;
+    }
 }

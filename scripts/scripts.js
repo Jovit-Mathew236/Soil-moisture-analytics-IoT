@@ -7,6 +7,7 @@ import {
   query,
   doc,
 } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDm_4T2Ipv4CJio1sx1-iXlKbmgr-QqB4I",
@@ -18,6 +19,7 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
 var chart = new Highcharts.Chart({
   chart: {
@@ -158,3 +160,11 @@ function updateChart(data) {
 setInterval(requestData, 5000); // Request data every 5 seconds
 
 window.onload = requestData;
+
+const logoutbtn = document.getElementById("logoutButton");
+
+logoutbtn.onclick = function () {
+  localStorage.removeItem("name");
+  auth.signOut();
+  window.location.href = "./";
+};
