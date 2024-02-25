@@ -20,6 +20,21 @@ h2 {
     margin: auto;
 }
 
+.logoutbtn {
+    border: none;
+    margin: auto;
+    width: 120px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f04;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
 section {
     display: flex;
     justify-content: space-between;
@@ -76,19 +91,6 @@ section {
     border-radius: 50%;
 }
 
-#logoutButton {
-    border: none;
-    margin: auto;
-    width: 120px;
-    padding: 10px;
-    border-radius: 5px;
-    background: #f04;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
 
 @media (max-width: 768px) {
     section {
